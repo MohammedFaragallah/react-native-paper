@@ -558,7 +558,7 @@ const BottomNavigation = ({
       })
     : approxBackgroundColor;
 
-  const isDark = !color(approxBackgroundColor).isLight();
+  const isDark = !color(approxBackgroundColor.toString()).isLight();
 
   const textColor = isDark ? white : black;
   const activeTintColor =
@@ -700,7 +700,7 @@ const BottomNavigation = ({
               />
             ) : null}
             {routes.map((route, index) => {
-              const focused = navigationState.index === index;
+              // const focused = navigationState.index === index;
               const active = tabsAnims[index];
 
               // Scale the label up
@@ -742,10 +742,10 @@ const BottomNavigation = ({
                 onPress: () => handleTabPress(index),
                 testID: getTestID({ route }),
                 accessibilityLabel: getAccessibilityLabel({ route }),
-                accessibilityTraits: focused
-                  ? ['button', 'selected']
-                  : 'button',
-                accessibilityComponentType: 'button',
+                // accessibilityTraits: focused
+                //   ? ['button', 'selected']
+                //   : 'button',
+                // accessibilityComponentType: 'button',
                 accessibilityRole: 'button',
                 accessibilityState: { selected: true },
                 style: styles.item,

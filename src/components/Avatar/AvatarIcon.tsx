@@ -52,7 +52,9 @@ const Avatar = ({ icon, size = defaultSize, style, theme, ...rest }: Props) => {
     StyleSheet.flatten(style) || {};
   const textColor =
     rest.color ||
-    (color(backgroundColor).isLight() ? 'rgba(0, 0, 0, .54)' : white);
+    (color(backgroundColor.toString()).isLight()
+      ? 'rgba(0, 0, 0, .54)'
+      : white);
 
   return (
     <View

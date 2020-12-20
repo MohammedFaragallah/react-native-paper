@@ -102,10 +102,10 @@ const RadioButtonIOS = ({
                     });
                   }
             }
-            accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
-            accessibilityComponentType={
-              checked ? 'radiobutton_checked' : 'radiobutton_unchecked'
-            }
+            // accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
+            // accessibilityComponentType={
+            //   checked ? 'radiobutton_checked' : 'radiobutton_unchecked'
+            // }
             accessibilityRole="radio"
             accessibilityState={{ disabled, checked }}
             accessibilityLiveRegion="polite"

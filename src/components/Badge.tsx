@@ -79,8 +79,8 @@ const Badge = ({
   }, [visible, opacity, scale]);
 
   const { backgroundColor = theme.colors.notification, ...restStyle } =
-    StyleSheet.flatten(style) || {};
-  const textColor = color(backgroundColor).isLight() ? black : white;
+    (StyleSheet.flatten(style) as TextStyle) || {};
+  const textColor = color(backgroundColor.toString()).isLight() ? black : white;
 
   const borderRadius = size / 2;
 

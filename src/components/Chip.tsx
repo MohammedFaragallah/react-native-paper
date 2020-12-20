@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
   AccessibilityState,
-  AccessibilityTrait,
+  // AccessibilityTrait,
   Animated,
   Platform,
   StyleProp,
@@ -195,8 +195,8 @@ const Chip = ({
         .rgb()
         .string();
   const selectedBackgroundColor = (dark
-    ? color(backgroundColor).lighten(mode === 'outlined' ? 0.2 : 0.4)
-    : color(backgroundColor).darken(mode === 'outlined' ? 0.08 : 0.2)
+    ? color(backgroundColor.toString()).lighten(mode === 'outlined' ? 0.2 : 0.4)
+    : color(backgroundColor.toString()).darken(mode === 'outlined' ? 0.08 : 0.2)
   )
     .rgb()
     .string();
@@ -205,18 +205,18 @@ const Chip = ({
     ? color(selectedColor).fade(0.5).rgb().string()
     : selectedBackgroundColor;
 
-  const accessibilityTraits: AccessibilityTrait[] = ['button'];
+  // const accessibilityTraits: AccessibilityTrait[] = ['button'];
   const accessibilityState: AccessibilityState = {
     selected,
     disabled,
   };
 
   if (selected) {
-    accessibilityTraits.push('selected');
+    // accessibilityTraits.push('selected');
   }
 
   if (disabled) {
-    accessibilityTraits.push('disabled');
+    // accessibilityTraits.push('disabled');
   }
 
   return (
@@ -248,8 +248,8 @@ const Chip = ({
         underlayColor={underlayColor}
         disabled={disabled}
         accessibilityLabel={accessibilityLabel}
-        accessibilityTraits={accessibilityTraits}
-        accessibilityComponentType="button"
+        // accessibilityTraits={accessibilityTraits}
+        // accessibilityComponentType="button"
         accessibilityRole="button"
         accessibilityState={accessibilityState}
         testID={testID}
@@ -310,8 +310,8 @@ const Chip = ({
         <View style={styles.closeButtonStyle}>
           <TouchableWithoutFeedback
             onPress={onClose}
-            accessibilityTraits="button"
-            accessibilityComponentType="button"
+            // accessibilityTraits="button"
+            // accessibilityComponentType="button"
             accessibilityRole="button"
             accessibilityLabel={closeIconAccessibilityLabel}
           >

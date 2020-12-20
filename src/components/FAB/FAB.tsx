@@ -171,7 +171,7 @@ const FAB = ({
       .rgb()
       .string();
   } else {
-    foregroundColor = !color(backgroundColor).isLight()
+    foregroundColor = !color(backgroundColor.toString()).isLight()
       ? white
       : 'rgba(0, 0, 0, .54)';
   }
@@ -206,8 +206,8 @@ const FAB = ({
         rippleColor={rippleColor}
         disabled={disabled}
         accessibilityLabel={accessibilityLabel}
-        accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
-        accessibilityComponentType="button"
+        // accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
+        // accessibilityComponentType="button"
         accessibilityRole="button"
         accessibilityState={{ ...accessibilityState, disabled }}
         style={styles.touchable}

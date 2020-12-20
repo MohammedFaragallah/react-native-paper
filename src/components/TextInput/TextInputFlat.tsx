@@ -248,7 +248,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
           ...paddingFlat,
           affixHeight: leftLayout.height,
         })
-      : null;
+      : undefined;
 
     const rightAffixTopPosition = rightLayout.height
       ? calculateFlatAffixTopPosition({
@@ -256,7 +256,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
           ...paddingFlat,
           affixHeight: rightLayout.height,
         })
-      : null;
+      : undefined;
 
     const labelProps = {
       label,

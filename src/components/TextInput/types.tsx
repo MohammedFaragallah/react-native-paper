@@ -3,6 +3,7 @@ import type {
   Animated,
   TextStyle,
   LayoutChangeEvent,
+  ColorValue,
 } from 'react-native';
 import type { TextInputProps } from './TextInput';
 import type { $Omit } from './../../types';
@@ -11,7 +12,7 @@ export type RenderProps = {
   ref: (a: NativeTextInput | null | undefined) => void;
   onChangeText?: (a: string) => void;
   placeholder?: string;
-  placeholderTextColor?: string;
+  placeholderTextColor?: ColorValue;
   editable?: boolean;
   selectionColor?: string;
   onFocus?: (args: any) => void;
@@ -63,7 +64,7 @@ export type LabelProps = {
     | undefined;
   labelTranslationXOffset?: number;
   placeholderColor: string | null | undefined;
-  backgroundColor?: string | null | undefined;
+  backgroundColor?: ColorValue;
   label?: string | null | undefined;
   hasActiveOutline: boolean | null | undefined;
   activeColor: string;

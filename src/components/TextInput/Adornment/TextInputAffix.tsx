@@ -7,6 +7,7 @@ import {
   TextStyle,
   LayoutChangeEvent,
   Animated,
+  ViewStyle,
 } from 'react-native';
 
 import { withTheme } from '../../../core/theming';
@@ -25,7 +26,7 @@ type Props = {
 };
 
 type ContextState = {
-  topPosition: number | null;
+  topPosition: ViewStyle['top'];
   onLayout?: (event: LayoutChangeEvent) => void;
   visible?: Animated.Value;
   textStyle?: StyleProp<TextStyle>;
@@ -35,7 +36,7 @@ type ContextState = {
 
 const AffixContext = React.createContext<ContextState>({
   textStyle: { fontFamily: '', color: '' },
-  topPosition: null,
+  topPosition: undefined,
   side: AdornmentSide.Left,
 });
 
@@ -86,7 +87,7 @@ const TextInputAffix = ({ text, textStyle: labelStyle, theme }: Props) => {
   const offset =
     typeof paddingHorizontal === 'number' ? paddingHorizontal : AFFIX_OFFSET;
 
-  const style = {
+  const style: ViewStyle = {
     top: topPosition,
     [side]: offset,
   };

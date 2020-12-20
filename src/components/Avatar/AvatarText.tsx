@@ -71,7 +71,10 @@ const AvatarText = ({
   const { backgroundColor = theme.colors.primary, ...restStyle } =
     StyleSheet.flatten(style) || {};
   const textColor =
-    color || (Color(backgroundColor).isLight() ? 'rgba(0, 0, 0, .54)' : white);
+    color ||
+    (Color(backgroundColor.toString()).isLight()
+      ? 'rgba(0, 0, 0, .54)'
+      : white);
 
   return (
     <View

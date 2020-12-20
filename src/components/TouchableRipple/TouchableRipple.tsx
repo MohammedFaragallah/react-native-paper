@@ -27,7 +27,7 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
   /**
    * Whether to prevent interaction with the touchable.
    */
-  disabled?: boolean;
+  disabled?: boolean | null;
   /**
    * Function to execute on press. If not set, will cause the touchable to be disabled.
    */

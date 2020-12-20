@@ -74,6 +74,7 @@ const Surface = ({ style, theme, ...rest }: Props) => {
               ? overlay(elevation, colors.surface)
               : colors.surface,
         },
+        // @ts-ignore
         elevation && shadow(elevation),
         style,
       ]}
